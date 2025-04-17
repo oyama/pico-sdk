@@ -1,5 +1,6 @@
 set(CMAKE_DIR cmake)
 set(COMMON_DIR common)
+set(RP2_COMMON_DIR rp2_common)
 set(HOST_DIR host)
 
 include (${CMAKE_DIR}/no_hardware.cmake)
@@ -19,6 +20,9 @@ include (${CMAKE_DIR}/no_hardware.cmake)
  pico_add_subdirectory(${COMMON_DIR}/pico_util)
  pico_add_subdirectory(${COMMON_DIR}/pico_stdlib_headers)
 
+# rp2_common
+ pico_add_subdirectory(${RP2_COMMON_DIR}/pico_mbedtls)
+
 # host-specific
  pico_add_subdirectory(${HOST_DIR}/hardware_divider)
  pico_add_subdirectory(${HOST_DIR}/hardware_gpio)
@@ -34,6 +38,7 @@ include (${CMAKE_DIR}/no_hardware.cmake)
  pico_add_subdirectory(${HOST_DIR}/pico_stdio)
  pico_add_subdirectory(${HOST_DIR}/pico_stdlib)
  pico_add_subdirectory(${HOST_DIR}/pico_time_adapter)
+ pico_add_subdirectory(${HOST_DIR}/pico_rand)
 
 unset(CMAKE_DIR)
 unset(COMMON_DIR)
